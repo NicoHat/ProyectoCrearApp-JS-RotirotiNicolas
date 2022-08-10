@@ -58,6 +58,6 @@ const dataProducts = [{
     "price": "$1020.05",
     "category": "XS",
     "img": "http://dummyimage.com/286x180.png/cc0000/ffffff"
-  }]
+  }];
 
-  export default dataProducts
+  export default dataProducts;

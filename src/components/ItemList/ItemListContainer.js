@@ -12,6 +12,7 @@ function getProducts() {
 const ItemListContainer = () => {
   const [products, setProducts] = useState([]);
 
+
   useEffect(() => {
     getProducts()
       .then((respuesta) => {
@@ -19,7 +20,7 @@ const ItemListContainer = () => {
       })
       .catch((error) => {
         console.log(error)
-      });
+      })
   }, []);
 
   return (

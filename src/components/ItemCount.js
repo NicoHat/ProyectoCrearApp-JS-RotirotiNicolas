@@ -2,7 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 
 
-const Itemcount = ({stock, initial}) => {
+const ItemCount = ({stock, initial}) => {
     let [count, setCount] = useState(1);
 
     const handleIncrement = () => {
@@ -32,4 +32,4 @@ const Itemcount = ({stock, initial}) => {
   )
 }
 
-export default Itemcount
+export default ItemCount;
