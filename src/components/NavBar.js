@@ -15,7 +15,7 @@ export default function NavBar(){
                 <li className="nav-item">
                   <a className="nav-link" href="#">Indumentaria femenina</a>
                 </li>
-                <li class="nav-item">
+                <li className="nav-item">
                   <a className="nav-link" href="#">Calzados unisex</a>
                 </li>
               </ul>

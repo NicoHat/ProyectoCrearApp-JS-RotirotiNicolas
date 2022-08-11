@@ -25,9 +25,9 @@ const ItemCount = ({stock, initial}) => {
       <p>
           {count}
       </p>
-      <button type='button' class="btn btn-outline-success" onClick={handleIncrement}>+</button>
-      <button type='button' class="btn btn-outline-danger" onClick={handleDecrement}>-</button>
-      <button type='button' class='btn btn-outline-warning' onClick={reset}>Reset</button>
+      <button type='button' className="btn btn-outline-success" onClick={handleIncrement}>+</button>
+      <button type='button' className="btn btn-outline-danger" onClick={handleDecrement}>-</button>
+      <button type='button' className='btn btn-outline-warning' onClick={reset}>Reset</button>
     </div>
   )
 }

@@ -6,39 +6,42 @@ import dataProducts from '../dataProducts/dataProducts'
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-      setTimeout (() => resolve(dataProducts), 3000);
+      setTimeout (() => resolve([dataProducts[3]]), 2000);
     });
 }
 
-const ProductDetailContainer = () => {
-    const [product, setProduct] = useState({})
-    const [loading, setIsLoading] = useState(true)
+function ItemDetailContainer() {
+    const [product, setProduct] = useState([])
 
     useEffect(() => {
         getDetailProducts()
           .then((respuesta) => {
+            console.log(respuesta)
             setProduct(respuesta)
           })
           .catch((error) => {
             console.log(error)
           })
-          .finally (() => setIsLoading(false))
       }, []);
 
 
     return (
-      <>
-        <div className='container main mx-auto'>
-          <ItemDetail
-          title={ItemDetail.title}
-          price={ItemDetail.price}
-          category={ItemDetail.category}
-          description={ItemDetail.description}
-          img={ItemDetail.img}
-           />
+        <div className='container main mx-auto mt-5'>
+          {console.log("producto", product)}
+          {product.map((item) => {
+            return (
+              <ItemDetail
+              key={item.id}
+              title={item.title}
+              price={item.price}
+              category={item.category}
+              description={item.description}
+              img={item.img}
+              />
+            );
+          } )}
         </div>
-      </>
-    )
+      );
 }
 
-export default ProductDetailContainer;
+export default ItemDetailContainer;

@@ -5,7 +5,7 @@ import dataProducts from '../dataProducts/dataProducts.js';
 
 function getProducts() {
   return new Promise((resolve, reject) => {
-    setTimeout (() => resolve(dataProducts), 2000);
+    setTimeout (() => resolve([dataProducts[1]]), 2000);
   });
 }
 
@@ -23,18 +23,20 @@ const ItemListContainer = () => {
       })
   }, []);
 
+const lista = [] 
+products.forEach((item) => {
+  lista.push(
+    <Item
+      title={item.title}
+      price={item.price}
+      category={item.category}
+      img={item.img}
+    />)
+})
+
   return (
     <div className="container main mx-auto mt-5">
-      {products.map((item) => {
-        return (
-          <Item
-            title={item.title}
-            price={item.price}
-            category={item.category}
-            img={item.img}
-          />
-        );
-      })}
+      {lista}
     </div>
   );
     };
