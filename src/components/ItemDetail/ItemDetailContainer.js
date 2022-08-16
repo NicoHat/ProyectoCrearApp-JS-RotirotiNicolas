@@ -1,17 +1,21 @@
 import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail'
 import dataProducts from '../dataProducts/dataProducts'
+import { useParams } from 'react-router-dom'
+import { getDetailId } from '../Utils/customFetch'
 
 
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-      setTimeout (() => resolve([dataProducts[3]]), 2000);
+     resolve([dataProducts]);
     });
 }
 
-function ItemDetailContainer() {
+function ItemDetailContainer({ itemid }) {
     const [product, setProduct] = useState([])
+
+    const { id } = useParams()
 
     useEffect(() => {
         getDetailProducts()
@@ -27,15 +31,14 @@ function ItemDetailContainer() {
 
     return (
         <div className='container main mx-auto mt-5'>
-          {console.log("producto", product)}
           {product.map((item) => {
             return (
               <ItemDetail
               key={item.id}
+              id={item.id}
               title={item.title}
               price={item.price}
               category={item.category}
-              description={item.description}
               img={item.img}
               />
             );
