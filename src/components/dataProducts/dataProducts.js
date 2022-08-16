@@ -24,10 +24,10 @@ const dataProducts = [{
     "img": "http://dummyimage.com/286x180.png/ff4444/ffffff",
   }, {
     "id": 5,
-    "title": "Games",
-    "price": "$2990.50",
-    "category": "XL",
-    "img": "http://dummyimage.com/286x180.png/5fa2dd/ffffff",
+    "title": "Shirt",
+    "price": "$2075.61",
+    "category": "L",
+    "img": "http://dummyimage.com/286x180.png/ff4444/ffffff",
   }];
 
   export default dataProducts;

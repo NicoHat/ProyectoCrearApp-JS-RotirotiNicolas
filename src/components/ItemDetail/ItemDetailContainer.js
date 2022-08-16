@@ -2,26 +2,24 @@ import React, { useState, useEffect } from 'react'
 import ItemDetail from './ItemDetail'
 import dataProducts from '../dataProducts/dataProducts'
 import { useParams } from 'react-router-dom'
-import { getDetailId } from '../Utils/customFetch'
-
-
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-     resolve([dataProducts]);
+      setTimeout ( () => resolve(dataProducts), 500)        
     });
 }
 
 function ItemDetailContainer({ itemid }) {
     const [product, setProduct] = useState([])
+    const [isLoading, setIsLoading] = useState(true)
 
     const { id } = useParams()
 
     useEffect(() => {
         getDetailProducts()
           .then((respuesta) => {
-            console.log(respuesta)
-            setProduct(respuesta)
+            setProduct(respuesta[id])
+            setIsLoading(false)
           })
           .catch((error) => {
             console.log(error)
@@ -31,18 +29,21 @@ function ItemDetailContainer({ itemid }) {
 
     return (
         <div className='container main mx-auto mt-5'>
-          {product.map((item) => {
-            return (
-              <ItemDetail
-              key={item.id}
-              id={item.id}
-              title={item.title}
-              price={item.price}
-              category={item.category}
-              img={item.img}
-              />
-            );
-          } )}
+          {isLoading ?
+          <>
+          Cargando producto #{id}
+          </>
+          :
+          <ItemDetail
+          id={product.id}
+          title={product.title}
+          price={product.price}
+          category={product.category}
+          img={product.img}
+          key={product.id}
+          />
+         }
+              
         </div>
       );
 }

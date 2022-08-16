@@ -11,8 +11,12 @@ export default function NavBar(){
                       <Link to="/">
                         <li>Inicio</li>
                       </Link>
-                    <li>Indumentaria masculina</li>
-                    <li>Indumentaria femenina</li>
+                      <Link to="/category/:categoryId">
+                        <li>Indumentaria masculina</li>
+                      </Link>
+                      <Link to="/category/:categoryId">
+                        <li>Indumentaria femenina</li>
+                      </Link>
                     <Cart />
                   </ul>
             </div>

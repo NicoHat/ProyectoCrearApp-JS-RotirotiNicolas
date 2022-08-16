@@ -1,6 +1,5 @@
 import React from 'react'
 import ItemCount from '../ItemCount'
-import { Link } from 'react-router-dom'
 
 function ItemDetail ({ title, price, img, category, id}) {
   return (
