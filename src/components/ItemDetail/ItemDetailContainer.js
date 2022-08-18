@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-      setTimeout ( () => resolve(dataProducts), 500)        
+      setTimeout ( () => resolve(dataProducts), 2000)        
     });
 }
 
@@ -40,7 +40,7 @@ function ItemDetailContainer({ itemid }) {
           price={product.price}
           category={product.category}
           img={product.img}
-          key={product.id}
+          stock={product.stock}
           />
          }
               
