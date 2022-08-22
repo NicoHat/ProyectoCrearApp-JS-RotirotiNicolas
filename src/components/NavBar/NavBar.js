@@ -17,7 +17,9 @@ export default function NavBar(){
                       <Link to="/category/:categoryId">
                         <li>Indumentaria femenina</li>
                       </Link>
-                    <Cart />
+                      <Link to="/cart">
+                        <Cart />
+                      </Link>
                   </ul>
             </div>
 

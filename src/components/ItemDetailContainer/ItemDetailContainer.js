@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react'
-import ItemDetail from './ItemDetail'
+import ItemDetail from '../ItemDetail/ItemDetail'
 import dataProducts from '../dataProducts/dataProducts'
 import { useParams } from 'react-router-dom'
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-      setTimeout ( () => resolve(dataProducts), 2000)        
+      setTimeout ( () => resolve(dataProducts), 500)        
     });
 }
 
@@ -41,6 +41,7 @@ function ItemDetailContainer({ itemid }) {
           category={product.category}
           img={product.img}
           stock={product.stock}
+          key={product.id}
           />
          }
               

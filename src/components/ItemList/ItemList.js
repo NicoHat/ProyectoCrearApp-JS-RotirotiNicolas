@@ -9,7 +9,7 @@ function getProducts() {
   });
 }
 
-const ItemListContainer = () => {
+const ItemList = () => {
   const [products, setProducts] = useState([]);
 
 
@@ -42,4 +42,5 @@ const ItemListContainer = () => {
     };
 
     
-export default ItemListContainer;
+export default ItemList;
+
