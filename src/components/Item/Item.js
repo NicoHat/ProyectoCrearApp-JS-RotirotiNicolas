@@ -8,7 +8,7 @@ function Item ({ title, price, img, category, id}) {
           <div className='card-body'>
             <h2 className="card-title">{title}</h2>
             <p className="card-text">{category}</p>
-            <h3>{price}</h3>
+            <h3>${price}</h3>
             <Link to={`/detalle/${id}`}>
               <button>Ver detalles</button>
             </Link>

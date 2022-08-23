@@ -9,7 +9,7 @@ function getDetailProducts() {
     });
 }
 
-function ItemDetailContainer({ itemid }) {
+function ItemDetailContainer() {
     const [product, setProduct] = useState([])
     const [isLoading, setIsLoading] = useState(true)
 
@@ -34,15 +34,7 @@ function ItemDetailContainer({ itemid }) {
           Cargando producto #{id}
           </>
           :
-          <ItemDetail
-          id={product.id}
-          title={product.title}
-          price={product.price}
-          category={product.category}
-          img={product.img}
-          stock={product.stock}
-          key={product.id}
-          />
+          <ItemDetail {...product}/>
          }
               
         </div>

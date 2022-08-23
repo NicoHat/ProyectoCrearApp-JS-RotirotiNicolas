@@ -1,5 +1,5 @@
 import React, { useContext } from 'react'
-import { Container, Row, Col } from 'react-bootstrap'
+import { Container, Row, Col} from 'react-bootstrap'
 import { Link } from 'react-router-dom'
 import { CartContext } from '../CartContext/CartContext'
 
@@ -18,7 +18,7 @@ const Cart = () => {
             <Col>Cantidad:</Col>
             <Col>Precio total</Col>
             <Col>
-            <button className='btn btn-danger' onClick={() => clear()}>Eliminar productos</button>
+            <button className='btn btn-danger' onClick={() => clear()}>Vaciar carrito</button>
             </Col>
         </Row>
     </Container>
@@ -30,14 +30,14 @@ const Cart = () => {
             </div>
         ) : (
             <>
-            {cart.map((item) => (
-                <Row key={item.id}>
-                <Col>{item.titulo}</Col>
-                <Col>{`${item.cantidad}`}</Col>
-                <Col>{`$ ${item.precio}`}</Col>
-                <Col>${item.cantidad * item.precio}</Col>
+            {cart.map((product) => (
+                <Row key={product.id}>
+                <Col>{product.title}</Col>
+                <Col>{`${product.quantity}`}</Col>
+                <Col>{`$ ${product.price}`}</Col>
+                <Col>${product.quantity * product.price}</Col>
                 <Col>
-                  <Button className="btn btn-danger" onClick={() => removeItem(item.id)}>Eliminar del carrito</Button>
+                  <button className="btn btn-danger" onClick={() => removeItem(product.id)}>Eliminar producto</button>
                 </Col>
                 </Row>
             ))}

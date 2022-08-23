@@ -16,18 +16,14 @@ function ItemCount({initial, stock, onAdd}) {
         setCount(count - 1)
     }
   }
-    function onAddToCart(){
-      if(count >= -1){
-        onAdd()
-      }
-    }
+    
 
   return (
     <div>
       <p>{count}</p>
       <button type='button' className="btn btn-outline-success" onClick={handleIncrement}>Sumar</button>
       <button type='button' className="btn btn-outline-danger" onClick={handleDecrement}>Restar</button>
-      <button type='button' className='btn btn-outline-primary' onClick={() => onAddToCart()}>Añadir al carrito</button>
+      <button type='button' className='btn btn-outline-primary' onClick={() => onAdd(count)}>Añadir al carrito</button>
     </div>
   )
 }

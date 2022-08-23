@@ -14,19 +14,19 @@ export default function CartContextProvider({children}) {
     }
     }
 
-    const addItem = (item) =>{
-        if(isInCart(item.id)){
+    const addItem = (product, quantity) =>{
+        if(isInCart(product.id)){
             const newCart = cart.map((itemInCart) => {
-              if(itemInCart.id == item.id){
+              if(itemInCart.id == product.id){
                 const copyItem = {...itemInCart}
-                copyItem.cantidad += 1
+                copyItem.quantity += quantity
                 return copyItem
               }
             })
             setCart(newCart)
           } 
           else{
-          setCart([...cart, {...item, cantidad: 1}])
+          setCart([...cart, {...product, quantity}])
           }
         }
 
@@ -44,4 +44,3 @@ export default function CartContextProvider({children}) {
    </CartContext.Provider>
   )
 }
-
