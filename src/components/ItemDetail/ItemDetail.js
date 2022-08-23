@@ -6,13 +6,19 @@ import { CartContext } from '../CartContext/CartContext'
 
 function ItemDetail (product) {
 
-  const {addItem} = useContext(CartContext)
+  const {addProductToCart} = useContext(CartContext)
 
   const [onCart, setOnCart] = useState(false)
 
-  const onAdd = () => {
+  const onAdd = (quantityToAdd) => {
+    addProductToCart( {
+      ...product,
+      quantity: quantityToAdd
+    });
+
     setOnCart(true);
-    addItem(product);
+
+
   }
 
   return (
@@ -32,7 +38,7 @@ function ItemDetail (product) {
               </Link>
               </div>
           ) : (
-            <ItemCount initial={1} stock={product.stock} onAdd={onAdd} />
+            <ItemCount initial={1} stock={product.stock} onAddItemsToCart={onAdd} />
           )}  
         </div>
     </div>

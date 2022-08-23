@@ -5,7 +5,7 @@ import { useParams } from 'react-router-dom'
 
 function getDetailProducts() {
     return new Promise((resolve, reject) => {
-      setTimeout ( () => resolve(dataProducts), 500)        
+      setTimeout ( () => resolve(dataProducts), 2000)        
     });
 }
 
