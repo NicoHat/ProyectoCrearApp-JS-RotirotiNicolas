@@ -27,7 +27,7 @@ function ItemDetail (product) {
         <div className='card-body'>
           <h2 className="card-title">{product.title}</h2>
           <p className="card-text">{product.category}</p>
-          <h3>{product.price}</h3>
+          <h3>${product.price}</h3>
           {onCart ? (
             <div>
               <Link to="/cart">

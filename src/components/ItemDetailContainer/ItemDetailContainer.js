@@ -3,28 +3,32 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import dataProducts from '../dataProducts/dataProducts'
 import { useParams } from 'react-router-dom'
 
-function getDetailProducts() {
-    return new Promise((resolve, reject) => {
-      setTimeout ( () => resolve(dataProducts), 2000)        
-    });
-}
+
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([])
     const [isLoading, setIsLoading] = useState(true)
-
     const { id } = useParams()
+    
+
+
+    function getDetailProducts(id) {
+      return new Promise((resolve, reject) => {
+        setTimeout ( () => resolve(dataProducts[id-1]), 2000)        
+      });
+  }
+  console.log()
 
     useEffect(() => {
-        getDetailProducts()
+        getDetailProducts(Number(id))
           .then((respuesta) => {
-            setProduct(respuesta[id])
+            setProduct(respuesta)
             setIsLoading(false)
           })
           .catch((error) => {
             console.log(error)
           })
-      }, []);
+      }, [id]);
 
 
     return (

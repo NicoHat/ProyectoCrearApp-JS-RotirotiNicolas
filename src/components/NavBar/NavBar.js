@@ -1,11 +1,10 @@
-import Cart from '../CartWidget/CartWidget';
+import CartWidget from '../CartWidget/CartWidget';
 import { Link } from 'react-router-dom'
 import "./NavBar.css";
 
 export default function NavBar(){
     return(
           <>
-
             <div className="nav-bar">
                   <ul className="nav-menu">
                       <Link to="/">
@@ -18,11 +17,10 @@ export default function NavBar(){
                         <li>Indumentaria femenina</li>
                       </Link>
                       <Link to="/cart">
-                        <Cart />
+                        <CartWidget />
                       </Link>
                   </ul>
             </div>
-
           </>
     )
 }
