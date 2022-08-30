@@ -1,9 +1,22 @@
 import React, { useState, useEffect } from 'react'
 import ItemDetail from '../ItemDetail/ItemDetail'
-import dataProducts from '../dataProducts/dataProducts'
 import { useParams } from 'react-router-dom'
+import firestoreDB from '../../services/firebase'
+import { collection, doc, getDoc } from 'firebase/firestore'
 
 
+function getProductById(id) {
+  return new Promise ( (resolve) => {
+    const librosCollectionRef = collection(firestoreDB, "libros");
+    const docRef = doc(librosCollectionRef, id);
+   
+    getDoc(docRef).then(snapshot => {
+      resolve(
+        { ...snapshot.data(), id: snapshot.id}
+      )
+    });
+  });
+};
 
 function ItemDetailContainer() {
     const [product, setProduct] = useState([])
@@ -11,16 +24,8 @@ function ItemDetailContainer() {
     const { id } = useParams()
     
 
-
-    function getDetailProducts(id) {
-      return new Promise((resolve, reject) => {
-        setTimeout ( () => resolve(dataProducts[id-1]), 2000)        
-      });
-  }
-  console.log()
-
     useEffect(() => {
-        getDetailProducts(Number(id))
+        getProductById((id))
           .then((respuesta) => {
             setProduct(respuesta)
             setIsLoading(false)
@@ -35,12 +40,11 @@ function ItemDetailContainer() {
         <div className='container main mx-auto mt-5'>
           {isLoading ?
           <>
-          Cargando producto #{id}
+          Cargando producto
           </>
           :
           <ItemDetail {...product}/>
-         }
-              
+         }    
         </div>
       );
 }

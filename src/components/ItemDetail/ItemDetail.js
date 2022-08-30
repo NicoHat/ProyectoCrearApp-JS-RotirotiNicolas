@@ -15,17 +15,15 @@ function ItemDetail (product) {
       ...product,
       quantity: quantityToAdd
     });
-
     setOnCart(true);
-
-
   }
 
   return (
     <div className='card' style={{ width: '18rem' }}>
-      <img className='card-img-top' src={product.img} alt="Card image cap" />
+      <img className='card-img-top' src={product.img} />
         <div className='card-body'>
           <h2 className="card-title">{product.title}</h2>
+          <h4 className='card-text'>{product.author}</h4>
           <p className="card-text">{product.category}</p>
           <h3>${product.price}</h3>
           {onCart ? (

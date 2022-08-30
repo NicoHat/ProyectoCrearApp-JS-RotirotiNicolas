@@ -5,6 +5,6 @@ import ItemList from "../ItemList/ItemList";
     return (
             <ItemList />
     )
-    }
+    };
 
-export default ItemListContainer
+export default ItemListContainer;
