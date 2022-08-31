@@ -4,7 +4,6 @@ import firestoreDB from '../../services/firebase.js';
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
 
-
 function ItemList() {
   const [products, setProducts] = useState([]);
   const { categoryId } = useParams()
