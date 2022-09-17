@@ -1,10 +1,27 @@
-.nav-menu{
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 100%;
-  margin: 0;
-  height: 70px;
-  background-color: white;
-  top: 0;
+h2, h3 {
+    color: white;
+}
+h4 {
+    color: #e95420;
+}
+
+.textDeco {
+    text-decoration: none;
+}
+
+.navDrop {
+    font-size: 25px;
+    color: #e9ecef;
+    font-weight: 600;
+}
+.nav-link{
+    color: white
+}
+
+.navbar-nav .nav-link.active, .navbar-nav .show>.nav-link {
+    color: white;
+}
+
+.nav-link:focus, .nav-link:hover {
+    color: white;
 }

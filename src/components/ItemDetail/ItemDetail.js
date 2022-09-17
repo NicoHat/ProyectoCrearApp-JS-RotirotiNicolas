@@ -2,6 +2,8 @@ import React, { useState, useContext } from 'react'
 import ItemCount from '../ItemCount/ItemCount';
 import { Link } from "react-router-dom"
 import { CartContext } from '../CartContext/CartContext'
+import { Row, Card, Container } from 'react-bootstrap'
+import Button from 'react-bootstrap/Button';
 
 
 function ItemDetail (product) {
@@ -19,27 +21,32 @@ function ItemDetail (product) {
   }
 
   return (
-    <div className='card' style={{ width: '18rem' }}>
-      <img className='card-img-top' src={product.img} />
-        <div className='card-body'>
-          <h2 className="card-title">{product.title}</h2>
-          <h4 className='card-text'>{product.author}</h4>
-          <p className="card-text">{product.category}</p>
-          <h3>${product.price}</h3>
+    <Container fluid className='container'>
+          <Row className='justify-content-center'>
+            <Card className='cardContainer mt-4 mb-4' style= { { width: '22rem' }}>
+            <Card.Img className='thumbnail' variant="top" src={product.img} />
+            <Card.Body>
+            <Card.Title>{product.title}</Card.Title>
+            <Card.Text>{product.author}</Card.Text>
+            <Card.Text>{product.category}</Card.Text>
+            <Card.Text>${product.price}</Card.Text>
           {onCart ? (
             <div>
               <Link to="/cart">
-                <button className='btn'>Ver carrito</button>
+                <Button variant="primary">Ver Carrito</Button>
               </Link>
               <Link to="/">
-                <button className='btn'>Volver al shopp</button>
+                <Button variant="info">Volver al shopp</Button>
               </Link>
               </div>
           ) : (
             <ItemCount initial={1} stock={product.stock} onAddItemsToCart={onAdd} />
-          )}  
-        </div>
-    </div>
+          )}
+          </Card.Body>
+            </Card>
+          </Row>  
+        </Container>
+    
   )
 }
 

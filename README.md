@@ -1,70 +1,42 @@
-# Getting Started with Create React App
-
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<h1>Libreria Atlantis</h1>
+<hr><p>Ecommerce creado para el proyecto final del curso React JS de Coderhouse</p><h2>General Information</h2>
+<hr><ul>
+<li>El proyecto se centra en una SPA (Single-page application) la cual simula un ecommerce, siendo esta asincronica gracias a la herramienta de React Router Dom. Se utilizaron varias herramientas tales como html, css, javascript, react-bootstrap, swalAlerts, firebase/firestore.</li>
+</ul><ul>
+<li>El proyecto va dirigido para un prototipo de ecommerce el cual se encargara de vender libros por mayor o menor, brindando una interfaz simple pero agradable a la vista, donde el usuario podra buscar sus libros favoritos por categoria.</li>
+</ul><h2>Technologies Used</h2>
+<hr><ul>
+<li>HTML</li>
+</ul><ul>
+<li>CSS</li>
+</ul><ul>
+<li>JavaScript</li>
+</ul><ul>
+<li>React</li>
+</ul><ul>
+<li>React-Bootstrap</li>
+</ul><ul>
+<li>FireBase</li>
+</ul><ul>
+<li>FireStore</li>
+</ul><h2>Setup</h2>
+<hr><p>Dependencias del proyecto:</p>
+<p>"@testing-library/jest-dom": "^5.16.4"</p>
+<p>"@testing-library/react": "^13.3.0"</p>
+<p>"@testing-library/user-event": "^13.5.0"</p>
+<p>"bootstrap": "^5.2.1"</p>
+<p>"bootstrap-icons": "^1.9.1"</p>
+<p>"firebase": "^9.9.3"</p>
+<p>"react": "^18.2.0"</p>
+<p>"react-bootstrap": "^2.5.0"</p>
+<p>"react-dom": "^18.2.0"</p>
+<p>"react-router-dom": "^6.3.0"</p>
+<p>"react-scripts": "5.0.1"</p>
+<p>"sweetalert": "^2.1.2"</p>
+<p>"web-vitals": "^2.1.4"</p><h5>Steps</h5><ul>
+<li>Para inicializar el proyecto:</li>
+</ul><ul>
+<li>npm install i para instalar las dependencias</li>
+</ul><ul>
+<li>npm start para renderizar el proyecto en un host local</li>
+</ul>

@@ -3,10 +3,14 @@ import Item from '../Item/Item.js';
 import firestoreDB from '../../services/firebase';
 import { getDocs, collection, query, where } from 'firebase/firestore'
 import { useParams } from 'react-router-dom'
+import { Container, Row} from 'react-bootstrap'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner.js';
+
 
 function ItemList() {
   const [products, setProducts] = useState([]);
-  const { categoryId } = useParams()
+  const [isLoading, setIsLoading] = useState(true);
+  const { categoryId } = useParams();
 
   const  getProducts = () => {
     return new Promise((resolve) => {
@@ -38,17 +42,22 @@ function ItemList() {
     if (categoryId) {
       getProductsByCategory(categoryId).then((resolve) => {
         setProducts(resolve)
+        setIsLoading(false)
       });
     } else {
       getProducts().then((resolve) => {
         setProducts(resolve)
+        setIsLoading(false)
       });
     }
   }, [categoryId])
 
   return (
-    <div className='container main mx-auto mt-5'>
-          {products.map((item) => {
+        <Container fluid className='container mt-5' >
+          <Row>
+            {
+          isLoading ? <div><LoadingSpinner /></div>:
+          products.map((item) => {
             return (
               <Item
               key={item.id}
@@ -60,8 +69,10 @@ function ItemList() {
               author={item.author}
               />
             );
-          } )}
-        </div>
+          } )
+        }
+          </Row>
+        </Container>
   );
   };
 

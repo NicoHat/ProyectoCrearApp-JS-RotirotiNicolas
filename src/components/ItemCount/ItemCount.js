@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState } from 'react';
+import Button from 'react-bootstrap/Button';
+
 
 
 function ItemCount({initial, stock, onAddItemsToCart}) {
@@ -28,9 +30,10 @@ function ItemCount({initial, stock, onAddItemsToCart}) {
   return (
     <div>
       <p>{count}</p>
-      <button type='button' className="btn btn-outline-success" onClick={handleIncrement}>Sumar</button>
-      <button type='button' className="btn btn-outline-danger" onClick={handleDecrement}>Restar</button>
-      <button type='button' className='btn btn-outline-primary' onClick={onAdd}>Añadir al carrito</button>
+      <Button variant='success' onClick={handleIncrement}>Sumar</Button>
+      <Button variant='danger' onClick={handleDecrement}>Restar</Button>
+      <hr />
+      <Button variant='primary' onClick={onAdd}>Añadir al carrito</Button>
     </div>
   )
 }

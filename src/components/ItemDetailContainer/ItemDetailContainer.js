@@ -3,6 +3,8 @@ import ItemDetail from '../ItemDetail/ItemDetail'
 import { useParams } from 'react-router-dom'
 import firestoreDB from '../../services/firebase'
 import { collection, doc, getDoc } from 'firebase/firestore'
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner'
+import { Container } from 'react-bootstrap'
 
 
 function getProductById(id) {
@@ -37,15 +39,15 @@ function ItemDetailContainer() {
 
 
     return (
-        <div className='container main mx-auto mt-5'>
+      <Container>
           {isLoading ?
           <>
-          Cargando producto
+          <LoadingSpinner />
           </>
           :
           <ItemDetail {...product}/>
          }    
-        </div>
+      </Container>
       );
 }
 

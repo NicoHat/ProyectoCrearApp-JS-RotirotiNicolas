@@ -1,0 +1,9 @@
+.cart {
+    position: relative;
+    min-height: 80vh;
+    background-color: rgba(235, 85, 31, 0.8);
+}
+.cartContainer {
+    padding-bottom: 5rem;
+}
+
