@@ -1,10 +1,10 @@
 <h1>Libreria Atlantis</h1>
-<hr><p>Ecommerce creado para el proyecto final del curso React JS de Coderhouse</p><h2>General Information</h2>
+<hr><p>Ecommerce creado para el proyecto final del curso React JS de Coderhouse</p><h2>Informacion General</h2>
 <hr><ul>
 <li>El proyecto se centra en una SPA (Single-page application) la cual simula un ecommerce, siendo esta asincronica gracias a la herramienta de React Router Dom. Se utilizaron varias herramientas tales como html, css, javascript, react-bootstrap, swalAlerts, firebase/firestore.</li>
 </ul><ul>
 <li>El proyecto va dirigido para un prototipo de ecommerce el cual se encargara de vender libros por mayor o menor, brindando una interfaz simple pero agradable a la vista, donde el usuario podra buscar sus libros favoritos por categoria.</li>
-</ul><h2>Technologies Used</h2>
+</ul><h2>Tecnologias usadas</h2>
 <hr><ul>
 <li>HTML</li>
 </ul><ul>
@@ -33,7 +33,7 @@
 <p>"react-router-dom": "^6.3.0"</p>
 <p>"react-scripts": "5.0.1"</p>
 <p>"sweetalert": "^2.1.2"</p>
-<p>"web-vitals": "^2.1.4"</p><h5>Steps</h5><ul>
+<p>"web-vitals": "^2.1.4"</p><h5>Pasos para inicializar el ecommerce.</h5><ul>
 <li>Para inicializar el proyecto:</li>
 </ul><ul>
 <li>npm install i para instalar las dependencias</li>
